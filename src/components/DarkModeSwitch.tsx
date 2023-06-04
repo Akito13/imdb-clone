@@ -14,12 +14,11 @@ function DarkModeSwitch() {
     useEffect(() => {
         setMounted(true);
     }, []);
-    const themeSwitchIcon = mounted && currentTheme === "dark"
-        ? <MdLightMode className="cursor-pointer hover:text-amber-600 text-2xl"  onClick={event => setTheme("light")}/>
-        : <MdDarkMode  className="cursor-pointer hover:text-amber-600 text-2xl" onClick={event => setTheme("dark")}/>;
     return (
         <>
-            {themeSwitchIcon}
+            {mounted && currentTheme === "dark"
+                ? <MdLightMode className="cursor-pointer hover:text-amber-600 text-2xl"  onClick={event => setTheme("light")}/>
+                : <MdDarkMode  className="cursor-pointer hover:text-amber-600 text-2xl" onClick={event => setTheme("dark")}/>}
         </>
     );
 }
